@@ -12,6 +12,6 @@
 
 ## Examples
 
-The `DocuSign Monitor` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/module-ballerinax-docusign.monitor/tree/main/examples/), covering the following use cases:
+The `Docusign Monitor` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/module-ballerinax-docusign.monitor/tree/main/examples/), covering the following use cases:
 
 [//]: # (TODO: Add examples)

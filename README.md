@@ -1,4 +1,4 @@
-# Ballerina DocuSign Monitor connector
+# Ballerina Docusign Monitor connector
 
 [![Build](https://github.com/ballerina-platform/module-ballerinax-docusign.monitor/actions/workflows/ci.yml/badge.svg)](https://github.com/ballerina-platform/module-ballerinax-docusign.monitor/actions/workflows/ci.yml)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/ballerina-platform/module-ballerinax-docusign.monitor.svg)](https://github.com/ballerina-platform/module-ballerinax-docusign.monitor/commits/master)

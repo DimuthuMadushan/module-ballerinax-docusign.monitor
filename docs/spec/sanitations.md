@@ -18,7 +18,7 @@ These changes are done in order to improve the overall usability, and as workaro
 2. Fill the empty schema and property descriptions in the aligned spec
 
    - **Original**: Every definition (`UserAgentClientInfo`, `Os`, `Version`, `Device`, `IpAddressLocation`, `StreamResponse`, `StreamingEventRow`, `Browser`) and each of their properties (55 in total) had an empty `description`.
-   - **Updated**: Each now has a one-line description. The edits were made directly in `aligned_ballerina_openapi.json` and must be re-applied after a re-align.
+   - **Updated**: Each now has a one-line description. The edits were made directly in `aligned_ballerina_openapi.json` and must be re-applied after a re-align. The `OperatingSystem.family` description reads `Operating system family name.`
    - **Reason**: The generated record types and fields were left without documentation.
 
 3. Restore the server URL and the path prefix removed by align
@@ -38,6 +38,12 @@ These changes are done in order to improve the overall usability, and as workaro
    - **Original**: Security scheme `Bearer`, an `apiKey` in the `Authorization` header, which made the client take the raw header value.
    - **Updated**: Security scheme `OAuth2` with the authorization code flow, authorization URL `https://account.docusign.com/oauth/auth`, token and refresh URL `https://account.docusign.com/oauth/token`, and scopes `signature` and `impersonation`. The top-level and operation-level `security` entries reference `OAuth2`. The edit was made in the source spec and in the aligned spec. The client now accepts `http:BearerTokenConfig|OAuth2RefreshTokenGrantConfig`, so a JWT grant access token can be passed as a bearer token.
    - **Reason**: Docusign APIs are authorized with OAuth 2.0 access tokens, and the generated client should support token refresh.
+
+6. Restore open `additionalProperties` on `StreamingEvent.data`
+
+   - **Original**: The source spec declares `additionalProperties: {}`; align narrowed it to `{"type": "object"}` in the aligned spec.
+   - **Updated**: `additionalProperties: {}` is set again in `aligned_ballerina_openapi.json`, so the generated field accepts any JSON value.
+   - **Reason**: Align artifact. The edit is aligned-spec only and has to be reapplied after a re-align.
 
 ## OpenAPI cli command
 

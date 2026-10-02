@@ -9,6 +9,9 @@ configurable int pageSize = 100;
 configurable int maxPages = 10;
 
 public function main() returns error? {
+    if pageSize <= 0 || pageSize > int:SIGNED32_MAX_VALUE {
+        return error("pageSize must be between 1 and " + int:SIGNED32_MAX_VALUE.toString());
+    }
     monitor:Client monitorClient = check new ({
         auth: {
             clientId,
@@ -31,9 +34,6 @@ public function main() returns error? {
         monitor:StreamResponse page = check monitorClient->getStream(organizationId, {}, queries);
         monitor:StreamingEvent[] events = page?.resultData ?: [];
         pagesRead += 1;
-        if events.length() == 0 {
-            break;
-        }
         foreach monitor:StreamingEvent event in events {
             string country = event?.country ?: event?.ipAddressLocation?.country ?: "Unknown";
             eventsByCountry[country] = (eventsByCountry[country] ?: 0) + 1;
@@ -44,10 +44,15 @@ public function main() returns error? {
                 addressesByCountry[country] = addresses;
             }
         }
-        cursor = page?.endCursor;
-        if cursor is () {
+        string? next = page?.endCursor;
+        if next is () || next == "" {
             break;
         }
+        // An unchanged cursor means the stream has caught up.
+        if next == cursor {
+            break;
+        }
+        cursor = next;
     }
 
     io:println("Pages read: ", pagesRead);

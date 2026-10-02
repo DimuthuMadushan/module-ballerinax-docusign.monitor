@@ -130,7 +130,7 @@
                 "properties": {
                     "family": {
                         "type": "string",
-                        "description": "Browser family name.",
+                        "description": "Operating system family name.",
                         "nullable": true
                     },
                     "version": {
@@ -263,9 +263,7 @@
                     },
                     "data": {
                         "type": "object",
-                        "additionalProperties": {
-                            "type": "object"
-                        },
+                        "additionalProperties": {},
                         "description": "Additional event-specific data.",
                         "nullable": true
                     },

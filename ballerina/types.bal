@@ -21,7 +21,7 @@ import ballerina/http;
 
 # Operating system details of the client.
 public type OperatingSystem record {|
-    # Browser family name.
+    # Operating system family name.
     string? family?;
     # Version of a client component.
     ClientVersion version?;
@@ -101,7 +101,7 @@ public type StreamingEvent record {|
     # Country from which the event originated.
     string? country?;
     # Additional event-specific data.
-    record {|record {}...;|}? data?;
+    record {}? data?;
     # City from which the event originated.
     string? city?;
     # Latitude from which the event originated.

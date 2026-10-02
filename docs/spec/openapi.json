@@ -36,8 +36,8 @@
                 "tags": [
                     "DataSet"
                 ],
-                "summary": "",
-                "description": "",
+                "summary": "Get the monitoring event stream",
+                "description": "Retrieves a page of Docusign Monitor events from the organization data set. Pass the cursor from a previous response to continue reading the stream.",
                 "operationId": "Api_v1_RealTimeAlerting_GetStream",
                 "parameters": [
                     {
@@ -46,7 +46,7 @@
                         "required": true,
                         "type": "string",
                         "format": "uuid",
-                        "description": ""
+                        "description": "The unique identifier of the organization whose events are retrieved."
                     },
                     {
                         "name": "cursor",
@@ -66,7 +66,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "A page of monitoring events together with the cursor for the next page.",
                         "schema": {
                             "$ref": "#/definitions/StreamResponse"
                         }
@@ -74,7 +74,7 @@
                 },
                 "security": [
                     {
-                        "Bearer": []
+                        "OAuth2": []
                     }
                 ],
                 "x-ds-methodname": "getStream",
@@ -435,16 +435,21 @@
         }
     },
     "securityDefinitions": {
-        "Bearer": {
-            "name": "Authorization",
-            "in": "header",
-            "type": "apiKey",
-            "description": "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\""
+        "OAuth2": {
+            "type": "oauth2",
+            "flow": "accessCode",
+            "authorizationUrl": "https://account.docusign.com/oauth/auth",
+            "tokenUrl": "https://account.docusign.com/oauth/token",
+            "scopes": {
+                "signature": "Basic access to the Docusign account",
+                "impersonation": "Act on behalf of a user, required by the JWT grant"
+            },
+            "description": "OAuth 2.0 access token issued by the Docusign authorization server"
         }
     },
     "security": [
         {
-            "Bearer": []
+            "OAuth2": []
         }
     ],
     "x-ds-devdocs": {

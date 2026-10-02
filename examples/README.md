@@ -2,13 +2,24 @@
 
 The `ballerinax/docusign.monitor` connector provides practical examples illustrating usage in various scenarios.
 
-[//]: # (TODO: Add examples)
-1. 
-2. 
+1. **[User activity audit](https://github.com/ballerina-platform/module-ballerinax-docusign.monitor/tree/main/examples/user_activity_audit)** - Page through the organization event stream, collect the events of one user and count them by action.
+
+2. **[Event location summary](https://github.com/ballerina-platform/module-ballerinax-docusign.monitor/tree/main/examples/event_location_summary)** - Page through the organization event stream and summarize events and distinct IP addresses by country.
 
 ## Prerequisites
 
-[//]: # (TODO: Add prerequisites)
+1. Generate Docusign credentials to authenticate the connector as described in the [Setup guide](https://central.ballerina.io/ballerinax/docusign.monitor/latest#setup-guide).
+
+2. For each example, create a `Config.toml` file with the related configuration. Here's an example of how your Config.toml file should look:
+
+```toml
+clientId = "<client-id>"
+clientSecret = "<client-secret>"
+refreshToken = "<refresh-token>"
+organizationId = "<organization-id>"
+```
+
+Each example lists the additional values it needs in its own README.
 
 ## Running an example
 

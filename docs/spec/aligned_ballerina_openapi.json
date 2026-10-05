@@ -83,7 +83,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "A page of monitoring events together with the cursor for the next page.",
+                        "description": "A page of monitoring events together with the cursor for the next page",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -121,7 +121,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Client information parsed from the user agent string of the event.",
+                "description": "Client information parsed from the user agent string of the event",
                 "x-ds-definition-name": "UserAgentClientInfo",
                 "x-ms-summary": ""
             },
@@ -130,7 +130,7 @@
                 "properties": {
                     "family": {
                         "type": "string",
-                        "description": "Operating system family name.",
+                        "description": "Operating system family name",
                         "nullable": true
                     },
                     "version": {
@@ -138,7 +138,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Operating system details of the client.",
+                "description": "Operating system details of the client",
                 "x-ds-definition-name": "Os",
                 "x-ms-summary": ""
             },
@@ -147,22 +147,22 @@
                 "properties": {
                     "patch": {
                         "type": "string",
-                        "description": "Patch version number.",
+                        "description": "Patch version number",
                         "nullable": true
                     },
                     "major": {
                         "type": "string",
-                        "description": "Major version number.",
+                        "description": "Major version number",
                         "nullable": true
                     },
                     "minor": {
                         "type": "string",
-                        "description": "Minor version number.",
+                        "description": "Minor version number",
                         "nullable": true
                     }
                 },
                 "additionalProperties": false,
-                "description": "Version of a client component.",
+                "description": "Version of a client component",
                 "x-ds-definition-name": "Version",
                 "x-ms-summary": ""
             },
@@ -171,22 +171,22 @@
                 "properties": {
                     "model": {
                         "type": "string",
-                        "description": "Device model.",
+                        "description": "Device model",
                         "nullable": true
                     },
                     "family": {
                         "type": "string",
-                        "description": "Device family.",
+                        "description": "Device family",
                         "nullable": true
                     },
                     "brand": {
                         "type": "string",
-                        "description": "Device brand.",
+                        "description": "Device brand",
                         "nullable": true
                     }
                 },
                 "additionalProperties": false,
-                "description": "Device details of the client.",
+                "description": "Device details of the client",
                 "x-ds-definition-name": "Device",
                 "x-ms-summary": ""
             },
@@ -195,34 +195,34 @@
                 "properties": {
                     "country": {
                         "type": "string",
-                        "description": "Country of the IP address.",
+                        "description": "Country of the IP address",
                         "nullable": true
                     },
                     "city": {
                         "type": "string",
-                        "description": "City of the IP address.",
+                        "description": "City of the IP address",
                         "nullable": true
                     },
                     "latitude": {
                         "type": "number",
-                        "description": "Latitude of the IP address location.",
+                        "description": "Latitude of the IP address location",
                         "format": "double",
                         "nullable": true
                     },
                     "state": {
                         "type": "string",
-                        "description": "State or region of the IP address.",
+                        "description": "State or region of the IP address",
                         "nullable": true
                     },
                     "longitude": {
                         "type": "number",
-                        "description": "Longitude of the IP address location.",
+                        "description": "Longitude of the IP address location",
                         "format": "double",
                         "nullable": true
                     }
                 },
                 "additionalProperties": false,
-                "description": "Geographic location resolved from an IP address.",
+                "description": "Geographic location resolved from an IP address",
                 "x-ds-definition-name": "IpAddressLocation",
                 "x-ms-summary": ""
             },
@@ -231,7 +231,7 @@
                 "properties": {
                     "resultData": {
                         "type": "array",
-                        "description": "List of monitoring events in the page.",
+                        "description": "List of monitoring events in the page",
                         "nullable": true,
                         "items": {
                             "$ref": "#/components/schemas/StreamingEvent"
@@ -239,12 +239,12 @@
                     },
                     "endCursor": {
                         "type": "string",
-                        "description": "Cursor to pass in the next request to continue reading the stream.",
+                        "description": "Cursor to pass in the next request to continue reading the stream",
                         "nullable": true
                     }
                 },
                 "additionalProperties": false,
-                "description": "A page of monitoring events with the cursor for the next page.",
+                "description": "A page of monitoring events with the cursor for the next page",
                 "x-ds-definition-name": "StreamResponse",
                 "x-ms-summary": ""
             },
@@ -253,39 +253,39 @@
                 "properties": {
                     "proxyStatus": {
                         "type": "string",
-                        "description": "Status of the proxy used for the request.",
+                        "description": "Status of the proxy used for the request",
                         "nullable": true
                     },
                     "country": {
                         "type": "string",
-                        "description": "Country from which the event originated.",
+                        "description": "Country from which the event originated",
                         "nullable": true
                     },
                     "data": {
                         "type": "object",
                         "additionalProperties": {},
-                        "description": "Additional event-specific data.",
+                        "description": "Additional event-specific data",
                         "nullable": true
                     },
                     "city": {
                         "type": "string",
-                        "description": "City from which the event originated.",
+                        "description": "City from which the event originated",
                         "nullable": true
                     },
                     "latitude": {
                         "type": "number",
-                        "description": "Latitude from which the event originated.",
+                        "description": "Latitude from which the event originated",
                         "format": "double",
                         "nullable": true
                     },
                     "affectedUserIsMemberOfDomain": {
                         "type": "boolean",
-                        "description": "Whether the affected user is a member of the domain.",
+                        "description": "Whether the affected user is a member of the domain",
                         "nullable": true
                     },
                     "source": {
                         "type": "string",
-                        "description": "Source of the event.",
+                        "description": "Source of the event",
                         "nullable": true
                     },
                     "userAgentClientInfo": {
@@ -293,58 +293,58 @@
                     },
                     "organizationId": {
                         "type": "string",
-                        "description": "Identifier of the organization.",
+                        "description": "Identifier of the organization",
                         "nullable": true
                     },
                     "result": {
                         "type": "string",
-                        "description": "Result of the action.",
+                        "description": "Result of the action",
                         "nullable": true
                     },
                     "browser": {
                         "type": "string",
-                        "description": "Browser used by the user.",
+                        "description": "Browser used by the user",
                         "nullable": true
                     },
                     "property": {
                         "type": "string",
-                        "description": "Property affected by the event.",
+                        "description": "Property affected by the event",
                         "nullable": true
                     },
                     "referencedUserId": {
                         "type": "string",
-                        "description": "Identifier of the referenced user.",
+                        "description": "Identifier of the referenced user",
                         "nullable": true
                     },
                     "action": {
                         "type": "string",
-                        "description": "Action that was performed.",
+                        "description": "Action that was performed",
                         "nullable": true
                     },
                     "state": {
                         "type": "string",
-                        "description": "State or region from which the event originated.",
+                        "description": "State or region from which the event originated",
                         "nullable": true
                     },
                     "referencedUserIsMemberOfDomain": {
                         "type": "boolean",
-                        "description": "Whether the referenced user is a member of the domain.",
+                        "description": "Whether the referenced user is a member of the domain",
                         "nullable": true
                     },
                     "timestamp": {
                         "type": "string",
-                        "description": "Time at which the event occurred.",
+                        "description": "Time at which the event occurred",
                         "format": "date-time"
                     },
                     "longitude": {
                         "type": "number",
-                        "description": "Longitude from which the event originated.",
+                        "description": "Longitude from which the event originated",
                         "format": "double",
                         "nullable": true
                     },
                     "eventId": {
                         "type": "string",
-                        "description": "Unique identifier of the event.",
+                        "description": "Unique identifier of the event",
                         "nullable": true
                     },
                     "ipAddressLocation": {
@@ -352,77 +352,77 @@
                     },
                     "os": {
                         "type": "string",
-                        "description": "Operating system used by the user.",
+                        "description": "Operating system used by the user",
                         "nullable": true
                     },
                     "affectedUserId": {
                         "type": "string",
-                        "description": "Identifier of the affected user.",
+                        "description": "Identifier of the affected user",
                         "nullable": true
                     },
                     "ipAddress": {
                         "type": "string",
-                        "description": "IP address from which the event originated.",
+                        "description": "IP address from which the event originated",
                         "nullable": true
                     },
                     "proxyType": {
                         "type": "string",
-                        "description": "Type of proxy used for the request.",
+                        "description": "Type of proxy used for the request",
                         "nullable": true
                     },
                     "userAgent": {
                         "type": "string",
-                        "description": "User agent string of the client.",
+                        "description": "User agent string of the client",
                         "nullable": true
                     },
                     "isUserMemberOfDomain": {
                         "type": "boolean",
-                        "description": "Whether the user is a member of the domain.",
+                        "description": "Whether the user is a member of the domain",
                         "nullable": true
                     },
                     "userId": {
                         "type": "string",
-                        "description": "Identifier of the user who performed the action.",
+                        "description": "Identifier of the user who performed the action",
                         "nullable": true
                     },
                     "accountId": {
                         "type": "string",
-                        "description": "Identifier of the account.",
+                        "description": "Identifier of the account",
                         "nullable": true
                     },
                     "site": {
                         "type": "string",
-                        "description": "Site where the event occurred.",
+                        "description": "Site where the event occurred",
                         "nullable": true
                     },
                     "integratorKey": {
                         "type": "string",
-                        "description": "Integrator key of the application that performed the action.",
+                        "description": "Integrator key of the application that performed the action",
                         "nullable": true
                     },
                     "field": {
                         "type": "string",
-                        "description": "Field affected by the event.",
+                        "description": "Field affected by the event",
                         "nullable": true
                     },
                     "proxyLevel": {
                         "type": "string",
-                        "description": "Level of the proxy used for the request.",
+                        "description": "Level of the proxy used for the request",
                         "nullable": true
                     },
                     "device": {
                         "type": "string",
-                        "description": "Device used by the user.",
+                        "description": "Device used by the user",
                         "nullable": true
                     },
                     "object": {
                         "type": "string",
-                        "description": "Object affected by the event.",
+                        "description": "Object affected by the event",
                         "nullable": true
                     }
                 },
                 "additionalProperties": false,
-                "description": "A single monitoring event.",
+                "description": "A single monitoring event",
                 "x-ds-definition-name": "StreamingEventRow",
                 "x-ms-summary": ""
             },
@@ -431,7 +431,7 @@
                 "properties": {
                     "family": {
                         "type": "string",
-                        "description": "Browser family name.",
+                        "description": "Browser family name",
                         "nullable": true
                     },
                     "version": {
@@ -439,7 +439,7 @@
                     }
                 },
                 "additionalProperties": false,
-                "description": "Browser details of the client.",
+                "description": "Browser details of the client",
                 "x-ds-definition-name": "Browser",
                 "x-ms-summary": ""
             }

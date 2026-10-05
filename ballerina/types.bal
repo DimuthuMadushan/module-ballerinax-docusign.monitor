@@ -19,11 +19,11 @@
 
 import ballerina/http;
 
-# Operating system details of the client.
+# Operating system details of the client
 public type OperatingSystem record {|
-    # Operating system family name.
+    # Operating system family name
     string? family?;
-    # Version of a client component.
+    # Version of a client component
     ClientVersion version?;
 |};
 
@@ -35,45 +35,45 @@ public type GetStreamQueries record {
     int:Signed32 'limit?;
 };
 
-# Client information parsed from the user agent string of the event.
+# Client information parsed from the user agent string of the event
 public type UserAgentClientInfo record {|
-    # Operating system details of the client.
+    # Operating system details of the client
     OperatingSystem os?;
-    # Browser details of the client.
+    # Browser details of the client
     Browser browser?;
-    # Device details of the client.
+    # Device details of the client
     Device device?;
 |};
 
-# Device details of the client.
+# Device details of the client
 public type Device record {|
-    # Device model.
+    # Device model
     string? model?;
-    # Device family.
+    # Device family
     string? family?;
-    # Device brand.
+    # Device brand
     string? brand?;
 |};
 
-# Geographic location resolved from an IP address.
+# Geographic location resolved from an IP address
 public type IpAddressLocation record {|
-    # Country of the IP address.
+    # Country of the IP address
     string? country?;
-    # City of the IP address.
+    # City of the IP address
     string? city?;
-    # Latitude of the IP address location.
+    # Latitude of the IP address location
     decimal? latitude?;
-    # State or region of the IP address.
+    # State or region of the IP address
     string? state?;
-    # Longitude of the IP address location.
+    # Longitude of the IP address location
     decimal? longitude?;
 |};
 
-# A page of monitoring events with the cursor for the next page.
+# A page of monitoring events with the cursor for the next page
 public type StreamResponse record {|
-    # List of monitoring events in the page.
+    # List of monitoring events in the page
     StreamingEvent[]? resultData?;
-    # Cursor to pass in the next request to continue reading the stream.
+    # Cursor to pass in the next request to continue reading the stream
     string? endCursor?;
 |};
 
@@ -84,85 +84,85 @@ public type OAuth2RefreshTokenGrantConfig record {|
     string refreshUrl = "https://account.docusign.com/oauth/token";
 |};
 
-# Version of a client component.
+# Version of a client component
 public type ClientVersion record {|
-    # Patch version number.
+    # Patch version number
     string? patch?;
-    # Major version number.
+    # Major version number
     string? major?;
-    # Minor version number.
+    # Minor version number
     string? minor?;
 |};
 
-# A single monitoring event.
+# A single monitoring event
 public type StreamingEvent record {|
-    # Status of the proxy used for the request.
+    # Status of the proxy used for the request
     string? proxyStatus?;
-    # Country from which the event originated.
+    # Country from which the event originated
     string? country?;
-    # Additional event-specific data.
+    # Additional event-specific data
     record {}? data?;
-    # City from which the event originated.
+    # City from which the event originated
     string? city?;
-    # Latitude from which the event originated.
+    # Latitude from which the event originated
     decimal? latitude?;
-    # Whether the affected user is a member of the domain.
+    # Whether the affected user is a member of the domain
     boolean? affectedUserIsMemberOfDomain?;
-    # Source of the event.
+    # Source of the event
     string? 'source?;
-    # Client information parsed from the user agent string of the event.
+    # Client information parsed from the user agent string of the event
     UserAgentClientInfo userAgentClientInfo?;
-    # Identifier of the organization.
+    # Identifier of the organization
     string? organizationId?;
-    # Result of the action.
+    # Result of the action
     string? result?;
-    # Browser used by the user.
+    # Browser used by the user
     string? browser?;
-    # Property affected by the event.
+    # Property affected by the event
     string? property?;
-    # Identifier of the referenced user.
+    # Identifier of the referenced user
     string? referencedUserId?;
-    # Action that was performed.
+    # Action that was performed
     string? action?;
-    # State or region from which the event originated.
+    # State or region from which the event originated
     string? state?;
-    # Whether the referenced user is a member of the domain.
+    # Whether the referenced user is a member of the domain
     boolean? referencedUserIsMemberOfDomain?;
-    # Time at which the event occurred.
+    # Time at which the event occurred
     string timestamp?;
-    # Longitude from which the event originated.
+    # Longitude from which the event originated
     decimal? longitude?;
-    # Unique identifier of the event.
+    # Unique identifier of the event
     string? eventId?;
-    # Geographic location resolved from an IP address.
+    # Geographic location resolved from an IP address
     IpAddressLocation ipAddressLocation?;
-    # Operating system used by the user.
+    # Operating system used by the user
     string? os?;
-    # Identifier of the affected user.
+    # Identifier of the affected user
     string? affectedUserId?;
-    # IP address from which the event originated.
+    # IP address from which the event originated
     string? ipAddress?;
-    # Type of proxy used for the request.
+    # Type of proxy used for the request
     string? proxyType?;
-    # User agent string of the client.
+    # User agent string of the client
     string? userAgent?;
-    # Whether the user is a member of the domain.
+    # Whether the user is a member of the domain
     boolean? isUserMemberOfDomain?;
-    # Identifier of the user who performed the action.
+    # Identifier of the user who performed the action
     string? userId?;
-    # Identifier of the account.
+    # Identifier of the account
     string? accountId?;
-    # Site where the event occurred.
+    # Site where the event occurred
     string? site?;
-    # Integrator key of the application that performed the action.
+    # Integrator key of the application that performed the action
     string? integratorKey?;
-    # Field affected by the event.
+    # Field affected by the event
     string? 'field?;
-    # Level of the proxy used for the request.
+    # Level of the proxy used for the request
     string? proxyLevel?;
-    # Device used by the user.
+    # Device used by the user
     string? device?;
-    # Object affected by the event.
+    # Object affected by the event
     string? 'object?;
 |};
 
@@ -210,10 +210,10 @@ public type ConnectionConfig record {|
     boolean laxDataBinding = true;
 |};
 
-# Browser details of the client.
+# Browser details of the client
 public type Browser record {|
-    # Browser family name.
+    # Browser family name
     string? family?;
-    # Version of a client component.
+    # Version of a client component
     ClientVersion version?;
 |};

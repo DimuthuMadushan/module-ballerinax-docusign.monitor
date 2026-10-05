@@ -91,7 +91,7 @@
                 "family": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Browser family name."
                 },
                 "version": {
                     "$ref": "#/definitions/Version",
@@ -100,7 +100,7 @@
             },
             "additionalProperties": false,
             "x-ds-definition-name": "Browser",
-            "description": "",
+            "description": "Browser details of the client.",
             "x-ms-summary": ""
         },
         "Device": {
@@ -109,22 +109,22 @@
                 "family": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Device family."
                 },
                 "brand": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Device brand."
                 },
                 "model": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Device model."
                 }
             },
             "additionalProperties": false,
             "x-ds-definition-name": "Device",
-            "description": "",
+            "description": "Device details of the client.",
             "x-ms-summary": ""
         },
         "IpAddressLocation": {
@@ -134,33 +134,33 @@
                     "type": "number",
                     "format": "double",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Latitude of the IP address location."
                 },
                 "longitude": {
                     "type": "number",
                     "format": "double",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Longitude of the IP address location."
                 },
                 "country": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Country of the IP address."
                 },
                 "state": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "State or region of the IP address."
                 },
                 "city": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "City of the IP address."
                 }
             },
             "additionalProperties": false,
             "x-ds-definition-name": "IpAddressLocation",
-            "description": "",
+            "description": "Geographic location resolved from an IP address.",
             "x-ms-summary": ""
         },
         "Os": {
@@ -169,7 +169,7 @@
                 "family": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Operating system family name."
                 },
                 "version": {
                     "$ref": "#/definitions/Version",
@@ -178,7 +178,7 @@
             },
             "additionalProperties": false,
             "x-ds-definition-name": "Os",
-            "description": "",
+            "description": "Operating system details of the client.",
             "x-ms-summary": ""
         },
         "StreamingEventRow": {
@@ -187,42 +187,42 @@
                 "timestamp": {
                     "type": "string",
                     "format": "date-time",
-                    "description": ""
+                    "description": "Time at which the event occurred."
                 },
                 "eventId": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Unique identifier of the event."
                 },
                 "site": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Site where the event occurred."
                 },
                 "accountId": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Identifier of the account."
                 },
                 "organizationId": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Identifier of the organization."
                 },
                 "userId": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Identifier of the user who performed the action."
                 },
                 "integratorKey": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Integrator key of the application that performed the action."
                 },
                 "userAgent": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "User agent string of the client."
                 },
                 "userAgentClientInfo": {
                     "$ref": "#/definitions/UserAgentClientInfo",
@@ -231,7 +231,7 @@
                 "ipAddress": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "IP address from which the event originated."
                 },
                 "ipAddressLocation": {
                     "$ref": "#/definitions/IpAddressLocation",
@@ -240,125 +240,125 @@
                 "object": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Object affected by the event."
                 },
                 "action": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Action that was performed."
                 },
                 "property": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Property affected by the event."
                 },
                 "field": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Field affected by the event."
                 },
                 "result": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Result of the action."
                 },
                 "source": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Source of the event."
                 },
                 "isUserMemberOfDomain": {
                     "type": "boolean",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Whether the user is a member of the domain."
                 },
                 "referencedUserIsMemberOfDomain": {
                     "type": "boolean",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Whether the referenced user is a member of the domain."
                 },
                 "referencedUserId": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Identifier of the referenced user."
                 },
                 "proxyStatus": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Status of the proxy used for the request."
                 },
                 "proxyType": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Type of proxy used for the request."
                 },
                 "proxyLevel": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Level of the proxy used for the request."
                 },
                 "latitude": {
                     "type": "number",
                     "format": "double",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Latitude from which the event originated."
                 },
                 "longitude": {
                     "type": "number",
                     "format": "double",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Longitude from which the event originated."
                 },
                 "city": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "City from which the event originated."
                 },
                 "state": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "State or region from which the event originated."
                 },
                 "country": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Country from which the event originated."
                 },
                 "device": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Device used by the user."
                 },
                 "browser": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Browser used by the user."
                 },
                 "os": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Operating system used by the user."
                 },
                 "affectedUserId": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Identifier of the affected user."
                 },
                 "affectedUserIsMemberOfDomain": {
                     "type": "boolean",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Whether the affected user is a member of the domain."
                 },
                 "data": {
                     "type": "object",
                     "additionalProperties": {},
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Additional event-specific data."
                 }
             },
             "additionalProperties": false,
             "x-ds-definition-name": "StreamingEventRow",
-            "description": "",
+            "description": "A single monitoring event.",
             "x-ms-summary": ""
         },
         "UserAgentClientInfo": {
@@ -379,7 +379,7 @@
             },
             "additionalProperties": false,
             "x-ds-definition-name": "UserAgentClientInfo",
-            "description": "",
+            "description": "Client information parsed from the user agent string of the event.",
             "x-ms-summary": ""
         },
         "Version": {
@@ -388,22 +388,22 @@
                 "major": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Major version number."
                 },
                 "minor": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Minor version number."
                 },
                 "patch": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Patch version number."
                 }
             },
             "additionalProperties": false,
             "x-ds-definition-name": "Version",
-            "description": "",
+            "description": "Version of a client component.",
             "x-ms-summary": ""
         },
         "StreamResponse": {
@@ -415,17 +415,17 @@
                         "$ref": "#/definitions/StreamingEventRow"
                     },
                     "x-nullable": true,
-                    "description": ""
+                    "description": "List of monitoring events in the page."
                 },
                 "endCursor": {
                     "type": "string",
                     "x-nullable": true,
-                    "description": ""
+                    "description": "Cursor to pass in the next request to continue reading the stream."
                 }
             },
             "additionalProperties": false,
             "x-ds-definition-name": "StreamResponse",
-            "description": "",
+            "description": "A page of monitoring events with the cursor for the next page.",
             "x-ms-summary": ""
         },
         "DataSet": {

@@ -23,7 +23,7 @@
     "url" : "https://api.docusign.com/"
   } ],
   "security" : [ {
-    "Bearer" : [ ]
+    "OAuth2" : [ ]
   } ],
   "tags" : [ {
     "name" : "DataSet",
@@ -63,7 +63,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "OK",
+            "description" : "A page of monitoring events together with the cursor for the next page.",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -74,7 +74,7 @@
           }
         },
         "security" : [ {
-          "Bearer" : [ ]
+          "OAuth2" : [ ]
         } ],
         "x-ds-methodname" : "getStream",
         "x-ds-method" : "getStream",
@@ -90,7 +90,7 @@
         "properties" : {
           "family" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Browser family name.",
             "nullable" : true
           },
           "version" : {
@@ -98,7 +98,7 @@
           }
         },
         "additionalProperties" : false,
-        "description" : "",
+        "description" : "Browser details of the client.",
         "x-ds-definition-name" : "Browser",
         "x-ms-summary" : ""
       },
@@ -107,22 +107,22 @@
         "properties" : {
           "family" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Device family.",
             "nullable" : true
           },
           "brand" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Device brand.",
             "nullable" : true
           },
           "model" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Device model.",
             "nullable" : true
           }
         },
         "additionalProperties" : false,
-        "description" : "",
+        "description" : "Device details of the client.",
         "x-ds-definition-name" : "Device",
         "x-ms-summary" : ""
       },
@@ -131,34 +131,34 @@
         "properties" : {
           "latitude" : {
             "type" : "number",
-            "description" : "",
+            "description" : "Latitude of the IP address location.",
             "format" : "double",
             "nullable" : true
           },
           "longitude" : {
             "type" : "number",
-            "description" : "",
+            "description" : "Longitude of the IP address location.",
             "format" : "double",
             "nullable" : true
           },
           "country" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Country of the IP address.",
             "nullable" : true
           },
           "state" : {
             "type" : "string",
-            "description" : "",
+            "description" : "State or region of the IP address.",
             "nullable" : true
           },
           "city" : {
             "type" : "string",
-            "description" : "",
+            "description" : "City of the IP address.",
             "nullable" : true
           }
         },
         "additionalProperties" : false,
-        "description" : "",
+        "description" : "Geographic location resolved from an IP address.",
         "x-ds-definition-name" : "IpAddressLocation",
         "x-ms-summary" : ""
       },
@@ -167,7 +167,7 @@
         "properties" : {
           "family" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Operating system family name.",
             "nullable" : true
           },
           "version" : {
@@ -175,7 +175,7 @@
           }
         },
         "additionalProperties" : false,
-        "description" : "",
+        "description" : "Operating system details of the client.",
         "x-ds-definition-name" : "Os",
         "x-ms-summary" : ""
       },
@@ -184,42 +184,42 @@
         "properties" : {
           "timestamp" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Time at which the event occurred.",
             "format" : "date-time"
           },
           "eventId" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Unique identifier of the event.",
             "nullable" : true
           },
           "site" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Site where the event occurred.",
             "nullable" : true
           },
           "accountId" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Identifier of the account.",
             "nullable" : true
           },
           "organizationId" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Identifier of the organization.",
             "nullable" : true
           },
           "userId" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Identifier of the user who performed the action.",
             "nullable" : true
           },
           "integratorKey" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Integrator key of the application that performed the action.",
             "nullable" : true
           },
           "userAgent" : {
             "type" : "string",
-            "description" : "",
+            "description" : "User agent string of the client.",
             "nullable" : true
           },
           "userAgentClientInfo" : {
@@ -227,7 +227,7 @@
           },
           "ipAddress" : {
             "type" : "string",
-            "description" : "",
+            "description" : "IP address from which the event originated.",
             "nullable" : true
           },
           "ipAddressLocation" : {
@@ -235,114 +235,114 @@
           },
           "object" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Object affected by the event.",
             "nullable" : true
           },
           "action" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Action that was performed.",
             "nullable" : true
           },
           "property" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Property affected by the event.",
             "nullable" : true
           },
           "field" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Field affected by the event.",
             "nullable" : true
           },
           "result" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Result of the action.",
             "nullable" : true
           },
           "source" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Source of the event.",
             "nullable" : true
           },
           "isUserMemberOfDomain" : {
             "type" : "boolean",
-            "description" : "",
+            "description" : "Whether the user is a member of the domain.",
             "nullable" : true
           },
           "referencedUserIsMemberOfDomain" : {
             "type" : "boolean",
-            "description" : "",
+            "description" : "Whether the referenced user is a member of the domain.",
             "nullable" : true
           },
           "referencedUserId" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Identifier of the referenced user.",
             "nullable" : true
           },
           "proxyStatus" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Status of the proxy used for the request.",
             "nullable" : true
           },
           "proxyType" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Type of proxy used for the request.",
             "nullable" : true
           },
           "proxyLevel" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Level of the proxy used for the request.",
             "nullable" : true
           },
           "latitude" : {
             "type" : "number",
-            "description" : "",
+            "description" : "Latitude from which the event originated.",
             "format" : "double",
             "nullable" : true
           },
           "longitude" : {
             "type" : "number",
-            "description" : "",
+            "description" : "Longitude from which the event originated.",
             "format" : "double",
             "nullable" : true
           },
           "city" : {
             "type" : "string",
-            "description" : "",
+            "description" : "City from which the event originated.",
             "nullable" : true
           },
           "state" : {
             "type" : "string",
-            "description" : "",
+            "description" : "State or region from which the event originated.",
             "nullable" : true
           },
           "country" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Country from which the event originated.",
             "nullable" : true
           },
           "device" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Device used by the user.",
             "nullable" : true
           },
           "browser" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Browser used by the user.",
             "nullable" : true
           },
           "os" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Operating system used by the user.",
             "nullable" : true
           },
           "affectedUserId" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Identifier of the affected user.",
             "nullable" : true
           },
           "affectedUserIsMemberOfDomain" : {
             "type" : "boolean",
-            "description" : "",
+            "description" : "Whether the affected user is a member of the domain.",
             "nullable" : true
           },
           "data" : {
@@ -350,12 +350,12 @@
             "additionalProperties" : {
               "type" : "object"
             },
-            "description" : "",
+            "description" : "Additional event-specific data.",
             "nullable" : true
           }
         },
         "additionalProperties" : false,
-        "description" : "",
+        "description" : "A single monitoring event.",
         "x-ds-definition-name" : "StreamingEventRow",
         "x-ms-summary" : ""
       },
@@ -373,7 +373,7 @@
           }
         },
         "additionalProperties" : false,
-        "description" : "",
+        "description" : "Client information parsed from the user agent string of the event.",
         "x-ds-definition-name" : "UserAgentClientInfo",
         "x-ms-summary" : ""
       },
@@ -382,22 +382,22 @@
         "properties" : {
           "major" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Major version number.",
             "nullable" : true
           },
           "minor" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Minor version number.",
             "nullable" : true
           },
           "patch" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Patch version number.",
             "nullable" : true
           }
         },
         "additionalProperties" : false,
-        "description" : "",
+        "description" : "Version of a client component.",
         "x-ds-definition-name" : "Version",
         "x-ms-summary" : ""
       },
@@ -406,7 +406,7 @@
         "properties" : {
           "resultData" : {
             "type" : "array",
-            "description" : "",
+            "description" : "List of monitoring events in the page.",
             "nullable" : true,
             "items" : {
               "$ref" : "#/components/schemas/StreamingEventRow"
@@ -414,12 +414,12 @@
           },
           "endCursor" : {
             "type" : "string",
-            "description" : "",
+            "description" : "Cursor to pass in the next request to continue reading the stream.",
             "nullable" : true
           }
         },
         "additionalProperties" : false,
-        "description" : "",
+        "description" : "A page of monitoring events with the cursor for the next page.",
         "x-ds-definition-name" : "StreamResponse",
         "x-ms-summary" : ""
       },
@@ -431,11 +431,19 @@
       }
     },
     "securitySchemes" : {
-      "Bearer" : {
-        "type" : "apiKey",
-        "description" : "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
-        "name" : "Authorization",
-        "in" : "header"
+      "OAuth2" : {
+        "type" : "oauth2",
+        "description" : "OAuth 2.0 access token issued by the Docusign authorization server",
+        "flows" : {
+          "authorizationCode" : {
+            "authorizationUrl" : "https://account.docusign.com/oauth/auth",
+            "tokenUrl" : "https://account.docusign.com/oauth/token",
+            "scopes" : {
+              "signature" : "Basic access to the Docusign account",
+              "impersonation" : "Act on behalf of a user, required by the JWT grant"
+            }
+          }
+        }
       }
     }
   },

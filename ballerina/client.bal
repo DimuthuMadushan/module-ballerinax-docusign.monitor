@@ -37,7 +37,7 @@ public isolated client class Client {
     # + organizationId - The unique identifier of the organization whose events are retrieved
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
-    # + return - A page of monitoring events together with the cursor for the next page. 
+    # + return - A page of monitoring events together with the cursor for the next page 
     remote isolated function getStream(string organizationId, map<string|string[]> headers = {}, *GetStreamQueries queries) returns StreamResponse|error {
         string resourcePath = string `/v1/organizations/${getEncodedUri(organizationId)}/stream`;
         resourcePath = resourcePath + check getPathForQueryParam(queries);
